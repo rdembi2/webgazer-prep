@@ -1,1 +1,3 @@
 # webgazer-prep
+
+GPL License
