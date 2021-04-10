@@ -34,3 +34,17 @@ webgazer.setGazeListener(function(data, elapsedTime) {
     }
     // console.log(`${xprediction} ${yprediction} - ${elapsedTime}`); //elapsed time is based on time since begin was called
 }).begin();
+
+
+function playpause(btn, vid) {
+    var vid = document.getElementById(vid);
+    if (vid.paused) {
+        vid.play();
+        btn.style.backgroundColor = "red";
+        btn.innerHTML = "Pause";
+    } else {
+        vid.pause();
+        btn.innerHTML = "Play";
+        btn.style.backgroundColor = "green";
+    }
+}
