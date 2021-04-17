@@ -16,12 +16,16 @@
 
 ## Nice to have
 
+* Instead of hover we can have a timer that gets reset after some time.
+
 * See if we can make a `webgazer` hover thing on the other file so we can brag we have two things
 
 * React?? Too much effort proly 
 
 ## Future Work
 
-* Actually integrate some real library like `webgazer`
+* ClassTranscribe Integration
+
+* Cross OS (since C# will only work on Windows tbh), at least it's free
 
 * https://github.com/szydej/GazeFlowAPI can give raw access to coordinates that we can work with
