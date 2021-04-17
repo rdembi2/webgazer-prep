@@ -48,3 +48,35 @@ function playpause(btn, vid) {
         btn.style.backgroundColor = "green";
     }
 }
+
+
+function advanceVideo(btn, vid) {
+    var vid = document.getElementById(vid);
+    if (vid.currentTime + 15 > vid.duration) {
+        vid.currentTime = vid.duration;
+    } else {
+        vid.currentTime += 15;
+    }
+}
+
+function backtrackVideo(btn, vid) {
+    var vid = document.getElementById(vid);
+    if (vid.currentTime - 15 > vid.duration) {
+        vid.currentTime = 0;
+    } else {
+        vid.currentTime -= 15;
+    }
+}
+
+function previousVideo(btn, vid) {
+    var vid = document.getElementById(vid);
+}
+
+function nextVideo(btn, vid) {
+    var vid = document.getElementById(vid);
+}
+
+function expandVideo(btn, vid) {
+    var vid = document.getElementById(vid);
+
+}

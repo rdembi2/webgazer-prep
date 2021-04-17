@@ -5,74 +5,30 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Gaze pointer video watcher</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <!-- <script src="webgazer.js" type="text/javascript" ></script> -->
     <script src='main.js'></script>
-
-    <style type="text/css">
-        body {
-            overflow: scroll;
-            margin: auto;
-            align-items: center;
-        }
-    
-        * {
-            margin: 0;
-            padding: 0;
-        } */
-    
-        .wrapper {
-            margin: 0 auto;
-            align-items: center;
-            width: 1500px;
-        }
-    
-        /* div#video_player_box{ width: 150px; background-color: #333; margin: 0px auto} */
-        div#video_player_box { 
-            width: 0px; 
-            margin: 0px auto;
-        }
-
-        div#video_controls_bar { 
-            width: fit-content; 
-            height: fit-content; 
-            background: #333; 
-            padding: 10px;
-        }
-    
-        .control_button {
-            font-size: 50px; 
-            height: 200px; 
-            width: 400px; 
-            background-color:green;
-            margin-right: 120px;
-        }
-    </style>
-    <!-- <script type = "text/javascript" > -->
-    
 </head>
 <body>
-
     <h1>Gaze pointer based UI</h1>
-    <p>Follow setup instructions <a href="">here</a></p>
-
+    <p>Follow setup instructions <a href="https://sourceforge.net/projects/gazepointer/">here</a></p>
 
     <div id="video_controls_bar">
         <button id="playpausebtn" 
         class="control_button"  
-        onclick="playpause(this, 'example_video')">
+        onmouseover="advanceVideo(this, 'example_video')">
             +15s
         </button>
     
         <button id="playpausebtn" 
         class="control_button"   
-            onclick="playpause(this, 'example_video')">
+        onmouseover="backtrackVideo(this, 'example_video')">
             -15s
         </button>
     
         <button id="playpausebtn" 
-            class="control_button"   
-            onclick="playpause(this, 'example_video')">
+        class="control_button"   
+        onclick="playpause(this, 'example_video')">
             Prev
         </button>
     </div>

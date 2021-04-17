@@ -1,0 +1,37 @@
+body {
+    overflow: scroll;
+    margin: auto;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+} */
+
+.wrapper {
+    margin: 0 auto;
+    align-items: center;
+    width: 1500px;
+}
+
+/* div#video_player_box{ width: 150px; background-color: #333; margin: 0px auto} */
+div#video_player_box { 
+    width: 0px; 
+    margin: 0px auto;
+}
+
+div#video_controls_bar { 
+    width: fit-content; 
+    height: fit-content; 
+    background: #333; 
+    padding: 10px;
+}
+
+.control_button {
+    font-size: 50px; 
+    height: 200px; 
+    width: 400px; 
+    background-color:green;
+    margin-right: 120px;
+}
