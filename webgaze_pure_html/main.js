@@ -36,8 +36,8 @@
 // }).begin();
 
 
-function playpause(btn, vid) {
-    var vid = document.getElementById(vid);
+function playpause(btn, id) {
+    const vid = document.getElementById(id);
     if (vid.paused) {
         vid.play();
         btn.style.backgroundColor = "red";
@@ -50,8 +50,8 @@ function playpause(btn, vid) {
 }
 
 
-function advanceVideo(btn, vid) {
-    var vid = document.getElementById(vid);
+function advanceVideo(btn, id) {
+    const vid = document.getElementById(id);
     if (vid.currentTime + 15 > vid.duration) {
         vid.currentTime = vid.duration;
     } else {
@@ -59,8 +59,8 @@ function advanceVideo(btn, vid) {
     }
 }
 
-function backtrackVideo(btn, vid) {
-    var vid = document.getElementById(vid);
+function backtrackVideo(btn, id) {
+    const vid = document.getElementById(id);
     if (vid.currentTime - 15 > vid.duration) {
         vid.currentTime = 0;
     } else {
@@ -68,15 +68,25 @@ function backtrackVideo(btn, vid) {
     }
 }
 
-function previousVideo(btn, vid) {
-    var vid = document.getElementById(vid);
+const videos = ["apollo.mp4", "sunset_trim.mp4"]
+let videoId = 0
+
+function previousVideo(btn, id) {
+    const vid = document.getElementById(id);
+    if (videoId != 0) {
+        videoId -= 1;
+    }
+    vid.src = videos[videoId]; 
 }
 
-function nextVideo(btn, vid) {
-    var vid = document.getElementById(vid);
+function nextVideo(btn, id) {
+    const vid = document.getElementById(id);
+    if (videoId != videos.length - 1) {
+        videoId += 1;
+    }
+    vid.src = videos[videoId];
 }
 
-function expandVideo(btn, vid) {
-    var vid = document.getElementById(vid);
-
+function expandVideo(btn, id) {
+    var vid = document.getElementById(id);
 }

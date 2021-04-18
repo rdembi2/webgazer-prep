@@ -28,7 +28,7 @@
     
         <button id="playpausebtn" 
         class="control_button"   
-        onclick="playpause(this, 'example_video')">
+        onmouseover="previousVideo(this, 'example_video')">
             Prev
         </button>
     </div>
@@ -37,10 +37,7 @@
 
 
     <div id="video_player_box">
-    <video id="example_video" controls="controls" height="300" autoplay muted loop>
-        <source src="apollo.mp4">
-        <!-- <source src="sunset_trim.mp4"> -->
-    </video>
+    <video id="example_video" controls="controls" height="300" autoplay muted loop src="apollo.mp4"></video>
 
     </div>
 
@@ -60,7 +57,7 @@
     
         <button id="playpausebtn" 
         class="control_button"  
-        onclick="playpause(this, 'example_video')">
+        onmouseover="nextVideo(this, 'example_video')">
             Next
         </button>
 
