@@ -14,21 +14,24 @@
     <p>Follow setup instructions <a href="https://sourceforge.net/projects/gazepointer/">here</a></p>
 
     <div id="video_controls_bar">
-        <button id="playpausebtn" 
+        <button id="advance" 
         class="control_button"  
-        onmouseover="advanceVideo(this, 'example_video')">
+        onmouseover="lookAt(this, 'advance')"
+        onmouseout="stopLookingAt(this, 'advance')">
             +15s
         </button>
     
-        <button id="playpausebtn" 
+        <button id="backtrack" 
         class="control_button"   
-        onmouseover="backtrackVideo(this, 'example_video')">
+        onmouseover="lookAt(this, 'backtrack')"
+        onmouseout="stopLookingAt(this, 'backtrack')">
             -15s
         </button>
     
-        <button id="playpausebtn" 
+        <button id="prev" 
         class="control_button"   
-        onmouseover="previousVideo(this, 'example_video')">
+        onmouseover="lookAt(this, 'prev')"
+        onmouseout="stopLookingAt(this, 'prev')">
             Prev
         </button>
     </div>
@@ -39,22 +42,25 @@
     </div>
 
     <div id="video_controls_bar">
-        <button id="playpausebtn" 
+        <button id="playpause" 
         class="control_button" 
         style="background-color: red;"
-        onmouseover="playpause(this, 'example_video')">
+        onmouseover="lookAt(this, 'playpause')"
+        onmouseout="stopLookingAt(this, 'playpause')">
             Pause
         </button>
     
-        <button id="playpausebtn" 
+        <button id="speed" 
         class="control_button" 
-        onmouseover="speedslow(this, 'example_video')">
+        onmouseover="lookAt(this, 'speed')"
+        onmouseout="stopLookingAt(this, 'speed')">
             1x
         </button>
     
-        <button id="playpausebtn" 
+        <button id="next" 
         class="control_button"  
-        onmouseover="nextVideo(this, 'example_video')">
+        onmouseover="lookAt(this, 'next')"
+        onmouseout="stopLookingAt(this, 'next')">
             Next
         </button>
 

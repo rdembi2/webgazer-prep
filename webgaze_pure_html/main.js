@@ -1,56 +1,65 @@
-// webgazer.begin()
+// constants
+const videos = ["apollo.mp4", "sunset_trim.mp4"];
+const videoEl = "example_video";
+const timeout = 1000;
+// global state
 
-// let timeLookingAtScreen = 0;
-// let prevStamp = 0;
-
-// const largeNumber = 525479; // can be whatever
-// let minX = largeNumber;
-// let minY = largeNumber; 
-// let maxX = -largeNumber;
-// let maxY = -largeNumber;
-
-// webgazer.setGazeListener(function(data, elapsedTime) {
-//     if (data == null) {
-//         return;
-//     }
-//     var xprediction = data.x; //these x coordinates are relative to the viewport
-//     var yprediction = data.y; //these y coordinates are relative to the viewport
-
-//     timeLookingAtScreen += elapsedTime - prevStamp; // delta time
-//     timeLookingAtScreen = elapsedTime;
-
-//     if (xprediction < minX) {
-//         console.log(`new min: ${xprediction} compared to ${minX}`);
-//         minX = xprediction;
-//     }
-//     if (yprediction < minY) {
-//         minY = yprediction;
-//     }
-//     if (xprediction > maxX) {
-//         maxX = xprediction;
-//     }
-//     if (yprediction > maxY) {
-//         maxY = yprediction;
-//     }
-//     // console.log(`${xprediction} ${yprediction} - ${elapsedTime}`); //elapsed time is based on time since begin was called
-// }).begin();
+let videoId = 0;
 
 
-function playpause(btn, id) {
-    const vid = document.getElementById(id);
+let looking = {
+    "advance":   false,
+    "backtrack": false,
+    "prev":      false,
+    "playpause": false,
+    "speed":     false,
+    "next":      false
+};
+
+// functions
+
+function lookAt(btn, button_name) {
+    looking[button_name] = true;
+    btn.style.backgroundColor = "yellow";
+    setTimeout(function() {
+        console.log("timeout went");
+        console.log(looking);
+        if (looking[button_name]) {
+            if (button_name == "advance") {
+                advanceVideo(btn);
+            } else if (button_name == "backtrack") {
+                backtrackVideo(btn);
+            } else if (button_name == "prev") {
+                previousVideo(btn);
+            } else if (button_name == "playpause") {
+                playpause(btn);
+            } else if (button_name == "speed") {
+                speedslow(btn);
+            } else if (button_name == "next") {
+                nextVideo(btn);
+            }
+        }
+    }, timeout);
+}
+
+function stopLookingAt(btn, button_name) {
+    looking[button_name] = false;
+    btn.style.backgroundColor = "green";
+}
+
+function playpause(btn) {
+    const vid = document.getElementById(videoEl);
     if (vid.paused) {
         vid.play();
-        btn.style.backgroundColor = "red";
         btn.innerHTML = "Pause";
     } else {
         vid.pause();
         btn.innerHTML = "Play";
-        btn.style.backgroundColor = "green";
     }
 }
 
-function speedslow(btn, id) {
-    const vid = document.getElementById(id);
+function speedslow(btn) {
+    const vid = document.getElementById(videoEl);
     if (vid.playbackRate == 1) {
         vid.playbackRate = 2;
         btn.style.backgroundColor = "red";
@@ -63,8 +72,8 @@ function speedslow(btn, id) {
 }
 
 
-function advanceVideo(btn, id) {
-    const vid = document.getElementById(id);
+function advanceVideo(btn) {
+    const vid = document.getElementById(videoEl);
     if (vid.currentTime + 15 > vid.duration) {
         vid.currentTime = vid.duration;
     } else {
@@ -72,8 +81,8 @@ function advanceVideo(btn, id) {
     }
 }
 
-function backtrackVideo(btn, id) {
-    const vid = document.getElementById(id);
+function backtrackVideo(btn) {
+    const vid = document.getElementById(videoEl);
     if (vid.currentTime - 15 > vid.duration) {
         vid.currentTime = 0;
     } else {
@@ -81,19 +90,16 @@ function backtrackVideo(btn, id) {
     }
 }
 
-const videos = ["apollo.mp4", "sunset_trim.mp4"]
-let videoId = 0
-
-function previousVideo(btn, id) {
-    const vid = document.getElementById(id);
+function previousVideo(btn) {
+    const vid = document.getElementById(videoEl);
     if (videoId != 0) {
         videoId -= 1;
     }
     vid.src = videos[videoId]; 
 }
 
-function nextVideo(btn, id) {
-    const vid = document.getElementById(id);
+function nextVideo(btn) {
+    const vid = document.getElementById(videoEl);
     if (videoId != videos.length - 1) {
         videoId += 1;
     }

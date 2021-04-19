@@ -17,15 +17,16 @@ body {
 
 /* div#video_player_box{ width: 150px; background-color: #333; margin: 0px auto} */
 div#video_player_box { 
-    width: 0px; 
-    margin: 0px auto;
+  padding: 1px 0;
+  border: 3px solid green;
+  text-align: center;
 }
 
 div#video_controls_bar { 
     width: fit-content; 
     height: fit-content; 
     background: #333; 
-    padding: 10px;
+    padding: 0px;
 }
 
 .control_button {
