@@ -49,6 +49,19 @@ function playpause(btn, id) {
     }
 }
 
+function speedslow(btn, id) {
+    const vid = document.getElementById(id);
+    if (vid.playbackRate == 1) {
+        vid.playbackRate = 2;
+        btn.style.backgroundColor = "red";
+        btn.innerHTML = "2x";
+    } else {
+        vid.playbackRate = 1;
+        btn.innerHTML = "1x";
+        btn.style.backgroundColor = "green";
+    }
+}
+
 
 function advanceVideo(btn, id) {
     const vid = document.getElementById(id);
@@ -85,8 +98,4 @@ function nextVideo(btn, id) {
         videoId += 1;
     }
     vid.src = videos[videoId];
-}
-
-function expandVideo(btn, id) {
-    var vid = document.getElementById(id);
 }
