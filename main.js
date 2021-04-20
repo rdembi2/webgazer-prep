@@ -62,12 +62,10 @@ function speedslow(btn) {
     const vid = document.getElementById(videoEl);
     if (vid.playbackRate == 1) {
         vid.playbackRate = 2;
-        btn.style.backgroundColor = "red";
         btn.innerHTML = "2x";
     } else {
         vid.playbackRate = 1;
         btn.innerHTML = "1x";
-        btn.style.backgroundColor = "green";
     }
 }
 
