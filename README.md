@@ -4,7 +4,7 @@ Use your eyes to control a video watching interface powered by your laptop webca
 
 Web based gui to be used alongside [GazePointer](https://gazerecorder.com/gazepointer/) (non-commercial use).
 
-Check out a demo video [here](https://www.youtube.com/watch?v=uoDLyuPF0QM&feature=youtu.be) made for the UIUC [2021 Virtual Undergraduate Research Symposium](https://undergradresearch.illinois.edu/symposium.html) with [slides](https://docs.google.com/presentation/d/1m1g57ywmfDwI6RChzUSMqIvdUawPU-HtGibQHvCuMbI/edit?usp=sharing).
+Check out a demo video [here](https://www.youtube.com/watch?v=uoDLyuPF0QM&feature=youtu.be) made for the UIUC [2021 Virtual Undergraduate Research Symposium](https://undergradresearch.illinois.edu/symposium.html) with [slides](https://docs.google.com/presentation/d/1m1g57ywmfDwI6RChzUSMqIvdUawPU-HtGibQHvCuMbI/edit?usp=sharing). Sponsor Zillow's Choice at [UIUC WCS Explorations 2021](http://wcs.illinois.edu/explorations/index.html).
 
 ## Run
 
